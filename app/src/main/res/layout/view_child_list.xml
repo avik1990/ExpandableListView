@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="alloted_kids"
+            type="com.rtstl.expandablelistview.model.DriverSchedule.Alloted_kids" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/m_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_circular"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/ic_launcher"
+                tools:imageUrl="@{alloted_kids.kid_image}"
+                app:civ_border_color="#d27959"
+                app:civ_border_width="1dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_txt"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/gy_ring_circular"
+                android:gravity="center"
+                android:visibility="gone">
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/gy_ring_circular"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tv_count"
+                    fontPath="fonts/Poppins-Bold.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="01"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    tools:ignore="MissingPrefix" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_kidname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{alloted_kids.kid_name}"
+            android:layout_below="@+id/m_view" />
+    </RelativeLayout>
+</layout>
+
